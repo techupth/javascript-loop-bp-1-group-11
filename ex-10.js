@@ -4,11 +4,11 @@
 function calculateTax(income) {
     let taxPercentage;
     let taxAmount;
-  
+
     if (income > 50000) {
       taxPercentage = 0.3;
       taxAmount = income * taxPercentage;
-      return taxAmount
+      return taxAmount;
     }
     
     taxPercentage = 0.2;

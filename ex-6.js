@@ -83,7 +83,7 @@ let orders = [
   },
 ];
 
-let birdiePurchasedAmount;
+let birdiePurchasedAmount = 0;
 
 // Start coding here
 for (let i = 0; i < orders.length; i++) {

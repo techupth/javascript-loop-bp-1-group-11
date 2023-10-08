@@ -11,32 +11,38 @@ let studentsScore = {
 
 // Start coding here
 let totalScore = 0;
-let averageScore = 0;
-let numbers = Object.values(studentsScore);
-let studentNames = Object.keys(studentsScore)
-let numberofStudents = numbers.length
-let highestScore = numbers[0];
-let highestScoreName;
-let lowestScore = numbers[0];
-let lowestScoreName;
+let count = 0;
 
-numbers.forEach((number) => {totalScore += number})
-averageScore = totalScore/numberofStudents;
-
-for (let i = 0; i < numberofStudents; i++ ) {
-  if (numbers[i] > highestScore) {
-    highestScore = numbers[i];
-    highestScoreName = studentNames[i]
-  }
+for (let student in studentsScore) {
+  totalScore += studentsScore[student];
+  count++;
 }
 
-for (let i = 0; i < numberofStudents; i++ ) {
-  if (numbers[i] < lowestScore) {
-    lowestScore = numbers[i];
-    lowestScoreName = studentNames[i]
-  }
-}
+let averageScore = totalScore / count;
+
 console.log(`Average score is ${averageScore}`);
-console.log(`${highestScoreName} has the highest score, which is ${highestScore} points.`);
-console.log(`${lowestScoreName} has the lowest score, which is ${lowestScore} points.`);
 
+
+let highestScoreName = "";
+let highestScore = 0;
+
+for (let student in studentsScore) {
+  if (studentsScore[student] > highestScore) {
+    highestScore = studentsScore[student];
+    highestScoreName = student;
+  }
+}
+
+console.log(`${highestScoreName} has the highest score, which is ${highestScore} points`);
+
+let lowestScoreName = "";
+let lowestScore = Infinity;
+
+for (let student in studentsScore) {
+  if (studentsScore[student] < lowestScore) {
+    lowestScore = studentsScore[student];
+    lowestScoreName = student;
+  }
+}
+
+console.log(`${lowestScoreName} has the lowest score, which is ${lowestScore} points`);
