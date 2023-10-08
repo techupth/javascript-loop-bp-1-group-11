@@ -85,7 +85,7 @@ let orders = [
 
 
 let currentPurchasedAmount;
-let maxPurchasedAmount;
+let maxPurchasedAmount = orders[0].productPrice;
 let maxPurchasedId;
 
 // Start coding here

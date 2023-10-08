@@ -87,11 +87,8 @@ let birdiePurchasedAmount = 0;
 
 // Start coding here
 for (let i = 0; i < orders.length; i++) {
-  const order = orders[i];
-  if (order.customerName === "Birdie Shepland") {
-    const totalPrice = order.productPrice * order.productQuantity;
-    birdiePurchaseAmount += totalPrice;
+  if (orders[i].customerName === "Birdie Shepland") {
+    birdiePurchasedAmount = orders[i].productPrice * orders[i].productQuantity;
   }
 }
-
-console.log(`Total price is ${birdiePurchaseAmount}`);
+console.log(`Total price is ${birdiePurchasedAmount}`)
